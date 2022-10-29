@@ -1,24 +1,61 @@
-export const reducer = (state, action) => {
-  if (action.type === 'ADD_ITEM') {
-    const newPeople = [...state.people, action.payload];
-    return {
-      ...state,
-      people: newPeople,
-      isModalOpen: true,
-      modalContent: 'item added',
-    };
-  }
-  if (action.type === 'NO_VALUE') {
-    return { ...state, isModalOpen: true, modalContent: 'please enter value' };
-  }
-  if (action.type === 'CLOSE_MODAL') {
-    return { ...state, isModalOpen: false };
-  }
-  if (action.type === 'REMOVE_ITEM') {
-    const newPeople = state.people.filter(
-      (person) => person.id !== action.payload
-    );
-    return { ...state, people: newPeople };
-  }
-  throw new Error('no matching action type');
+const types = {
+    addItem: "ADD_ITEM",
+    noValue: "NO_VALUE",
+    closeModal: "CLOSE_MODAL",
+    removeItem: "REMOVE_ITEM",
 };
+
+const defaultState = {
+    people: [],
+    isModalOpen: false,
+    modalContent: "",
+};
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case types.addItem: {
+            const newPeople = [...state.people, action.payload];
+            const newState = {
+                ...state,
+                people: newPeople,
+                isModalOpen: true,
+                modalContent: "item added",
+            };
+            return newState;
+        }
+        case types.noValue: {
+            const newState = {
+                ...state,
+                isModalOpen: true,
+                modalContent: "please enter value",
+            };
+            return newState;
+        }
+        case types.closeModal: {
+            const newState = {
+                ...state,
+                isModalOpen: false,
+            };
+            return newState;
+        }
+
+        case types.removeItem: {
+            const newPeople = state.people.filter(
+                (person) => person.id !== action.payload
+            );
+
+            const newState = {
+                ...state,
+                people: newPeople,
+                isModalOpen: true,
+                modalContent: "item deleted",
+            };
+            return newState;
+        }
+
+        default:
+            return state;
+    }
+};
+
+export { defaultState, reducer, types };

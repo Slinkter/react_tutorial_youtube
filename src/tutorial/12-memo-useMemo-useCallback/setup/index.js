@@ -12,13 +12,13 @@ const Index = () => {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <React.Fragment>
       <h1>Count : {count}</h1>
       <button className='btn' onClick={() => setCount(count + 1)}>
         click me
       </button>
       <BigList products={products} />
-    </>
+    </React.Fragment>
   )
 }
 
