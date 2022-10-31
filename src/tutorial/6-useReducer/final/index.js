@@ -17,6 +17,7 @@ const Index = () => {
             dispatch({ type: types.noValue });
         }
     };
+    //
     const closeModal = () => {
         dispatch({ type: types.closeModal });
     };
@@ -24,8 +25,8 @@ const Index = () => {
         <>
             {state.isModalOpen && (
                 <Modal
-                    closeModal={closeModal}
                     modalContent={state.modalContent}
+                    closeModal={closeModal}
                 />
             )}
             <form onSubmit={handleSubmit} className="form">
