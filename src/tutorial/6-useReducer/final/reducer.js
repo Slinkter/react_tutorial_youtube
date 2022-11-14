@@ -13,16 +13,18 @@ const defaultState = {
 
 const reducer = (state, action) => {
     switch (action.type) {
+        //
         case types.addItem: {
             const newPeople = [...state.people, action.payload];
-            const newState = {
+            const updateState = {
                 ...state,
                 people: newPeople,
                 isModalOpen: true,
                 modalContent: "item added",
             };
-            return newState;
+            return updateState;
         }
+        //
         case types.noValue: {
             const newState = {
                 ...state,
@@ -31,6 +33,7 @@ const reducer = (state, action) => {
             };
             return newState;
         }
+        //
         case types.closeModal: {
             const newState = {
                 ...state,
@@ -38,7 +41,7 @@ const reducer = (state, action) => {
             };
             return newState;
         }
-
+        // 
         case types.removeItem: {
             const newPeople = state.people.filter(
                 (person) => person.id !== action.payload
@@ -52,7 +55,7 @@ const reducer = (state, action) => {
             };
             return newState;
         }
-
+        //
         default:
             return state;
     }
