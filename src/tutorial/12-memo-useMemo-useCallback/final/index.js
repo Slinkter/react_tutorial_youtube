@@ -2,7 +2,7 @@ import React, { useState, useCallback, useMemo } from "react";
 import { useFetch } from "../../9-custom-hooks/final/2-useFetch";
 //
 const url = "https://course-api.com/javascript-store-products";
-
+//
 const calculate = (data) => {
     return (
         data.reduce((total, item) => {
