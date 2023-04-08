@@ -18,7 +18,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 function App() {
     const [data, setData] = useState({});
-
     const [datav2, setDatav2] = useState({});
 
     let auth = getAuth();
