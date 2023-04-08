@@ -18,7 +18,13 @@ const Book = () => {
 };
 
 const index = () => {
-  return <div>index</div>;
+  return (
+    <div>
+      <Book />
+      <Book />
+      <Book />
+    </div>
+  );
 };
 
 export default index;
