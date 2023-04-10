@@ -5,7 +5,7 @@ import "./App.css";
 
 const Book = (props) => {
   const { img, title, author, number } = props;
-  console.log(props);
+
   return (
     <article className="book">
       <img src={img} alt={title} />
