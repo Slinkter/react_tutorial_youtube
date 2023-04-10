@@ -1,18 +1,18 @@
 // 4 :20 : 10
 import React from "react";
+import "./index.css";
 
-const Author = () => <h1>Author</h1>;
-const Imagen = () => <h2>imagne placeholder</h2>;
-const Title = () => {
-  return <h2>Book title </h2>;
-};
+const author = "Jordan Moore";
+const title = "Interesting Facts For Curious Minds";
+const img =
+  "./images/book-1.jpghttps://images-na.ssl-images-amazon.com/images/I/71m+Qtq+HrL._AC_UL900_SR900,600_.jpg";
 
 const Book = () => {
   return (
-    <article>
-      <Imagen></Imagen>
-      <Title></Title>
-      <Author></Author>
+    <article className="book">
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
     </article>
   );
 };
@@ -22,7 +22,7 @@ const index = () => {
     <div>
       <Book />
       <Book />
-      <Book />
+      <Book />x
     </div>
   );
 };
