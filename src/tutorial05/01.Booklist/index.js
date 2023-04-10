@@ -2,12 +2,17 @@
 import React from "react";
 import "./index.css";
 
-const author = "Jordan Moore";
-const title = "Interesting Facts For Curious Minds";
-const img =
-  "./images/book-1.jpghttps://images-na.ssl-images-amazon.com/images/I/71m+Qtq+HrL._AC_UL900_SR900,600_.jpg";
+/*
+author: "James Clear",
+    title: "Atomic Habits",
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
+    id: 2,
 
-const Book = () => {
+*/
+
+const Book = (props) => {
+  const { id, author, title, img } = props;
+
   return (
     <article className="book">
       <img src={img} alt={title} />
@@ -21,8 +26,6 @@ const index = () => {
   return (
     <div>
       <Book />
-      <Book />
-      <Book />x
     </div>
   );
 };
