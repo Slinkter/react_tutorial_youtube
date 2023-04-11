@@ -9,9 +9,8 @@ const UseEffectCleanup = () => {
   const [size, setSize] = useState(initialValue);
   const [show, setShow] = useState(false);
   //
-  const handleUpdateSize = () => {
-    setSize(window.innerWidth);
-  };
+  const handleUpdateSize = () => setSize(window.innerWidth);
+  const handleBtnShow = () => setShow(!show);
   //
   useEffect(() => {
     console.log("2- useEffect start");
@@ -24,12 +23,12 @@ const UseEffectCleanup = () => {
   console.log("1 - render component ");
   return (
     <>
-      <button onClick={() => setShow(!show)}>show</button>
+      <button onClick={handleBtnShow}>show</button>
       {show && (
-        <div>
+        <>
           <h1>window</h1>
           <h2>{size} PX</h2>
-        </div>
+        </>
       )}
     </>
   );
