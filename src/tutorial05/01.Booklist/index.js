@@ -22,7 +22,7 @@ const index = () => {
     <div>
       <Book />
       <Book />
-      <Book />x
+      <Book />
     </div>
   );
 };
