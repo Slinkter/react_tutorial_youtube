@@ -1,5 +1,5 @@
 import React from "react";
-import Setup from "./tutorial/3-conditional-rendering/final/06-toggle-challenge";
+import Setup from "./tutorial/6-useReducer/index";
 function App() {
   return (
     <div className="container">

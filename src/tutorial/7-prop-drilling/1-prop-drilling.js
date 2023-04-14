@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import { data } from "../../../data";
 
-// more components
-// fix - context api, redux (for more complex cases)
-
 const PropDrilling = () => {
   const [people, setPeople] = useState(data);
-  //
   const removePerson = (id) => {
-    const rpta = (person) => {
-      return person.filter((person) => person.id !== id);
-    };
-    setPeople(rpta);
+    setPeople((people) => {
+      return people.filter((person) => person.id !== id);
+    });
   };
-  //
   return (
     <section>
       <h3>prop drilling</h3>
@@ -22,8 +16,7 @@ const PropDrilling = () => {
   );
 };
 
-const List = (props) => {
-  const { people, removePerson } = props;
+const List = ({ people, removePerson }) => {
   return (
     <div>
       {people.map((person) => {
@@ -39,8 +32,7 @@ const List = (props) => {
   );
 };
 
-const SinglePerson = (props) => {
-  const { id, name, removePerson } = props;
+const SinglePerson = ({ id, name, removePerson }) => {
   return (
     <div className="item">
       <h4>{name}</h4>
