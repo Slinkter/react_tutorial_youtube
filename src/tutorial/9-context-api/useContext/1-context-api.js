@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
-import { data } from "../../../data";
+import React from "react";
+import { data } from "../../../db/data";
 // create context
 const PersonContext = React.createContext();
 // Combine context and funciones
 const ContextAPI = () => {
   // hook
-  const [people, setPeople] = useState(data);
+  const [people, setPeople] = React.useState(data);
   // func-remove
   const removePerson = (id) => {
     setPeople((people) => {
@@ -17,7 +17,7 @@ const ContextAPI = () => {
   // render
   return (
     <PersonContext.Provider value={values}>
-      <h3>Context API / useContext</h3>
+      <h3> CreateContext - useContext</h3>
       <List />
     </PersonContext.Provider>
   );
@@ -25,25 +25,26 @@ const ContextAPI = () => {
 
 const List = () => {
   //
-  const mainData = useContext(PersonContext);
+  const data = React.useContext(PersonContext);
   //
   return (
-    <div>
-      {mainData.people.map((person) => (
-        <SinglePerson key={person.id} {...person} />
+    <>
+      {data.people.map((person) => (
+        <Person key={person.id} {...person} />
       ))}
-    </div>
+    </>
   );
 };
 
-const SinglePerson = ({ id, name }) => {
-  // consumir
-  const { removePerson } = useContext(PersonContext);
+const Person = ({ id, name }) => {
+  //
+  const { removePerson } = React.useContext(PersonContext);
+  const handleRemove = () => removePerson(id);
   //
   return (
     <div className="item">
       <h4>{name}</h4>
-      <button onClick={() => removePerson(id)}>remove</button>
+      <button onClick={handleRemove}>remove</button>
     </div>
   );
 };
