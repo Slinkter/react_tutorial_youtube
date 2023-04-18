@@ -13,29 +13,27 @@ const LowerState = () => {
   const value = useMemo(() => slowFunction(), []);
   console.log(value);
 
+  const addPerson = (name) => {
+    const newPerson = {
+      id: Date.now(),
+      name: name,
+    };
+    setPeople([...people, newPerson]);
+  };
+
   const removePerson = useCallback(
     (id) => {
-      console.log(people);
       const newPeople = people.filter((person) => person.id !== id);
       setPeople(newPeople);
     },
     [people]
   );
 
-  const addPerson = (name) => {
-    const fakeId = Date.now();
-    const newPerson = {
-      id: fakeId,
-      name: name,
-    };
-    setPeople([...people, newPerson]);
-  };
-
   return (
     <section>
       <Counter />
+      <Form addPerson={addPerson} />
       <List people={people} removePerson={removePerson} />
-      <Form addPerson={addPerson}></Form>
     </section>
   );
 };
