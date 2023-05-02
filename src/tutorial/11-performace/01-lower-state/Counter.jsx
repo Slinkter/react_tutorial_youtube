@@ -9,8 +9,7 @@ const Counter = () => {
       style={{ marginBottom: "1rem" }}
       onClick={() => setCount(counter + 1)}
     >
-      {" "}
-      count {counter}{" "}
+      count :{counter}
     </button>
   );
 };
