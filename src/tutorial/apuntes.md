@@ -9,3 +9,7 @@ https://github.com/john-smilga/react-course-v3
 # Link
 
 https://github.com/john-smilga/react-course-v3/blob/main/03-advanced-react/TUTORIAL.md
+
+# link project final
+
+https://github.com/john-smilga/redux-toolkit-tutorial
