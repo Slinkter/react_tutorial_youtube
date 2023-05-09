@@ -6,14 +6,14 @@ const initialPerson = {
   message: "random message",
   hobby: "read books",
 };
+// operador de propagacion
+// copia las propiedades existente del objecto
+// solo modifica la propiedad name
 
 const UseStateObject = () => {
   const [person, setPerson] = useState(initialPerson);
 
   const changeName = () => {
-    // operador de propagacion
-    // copia las propiedades existente del objecto
-    // solo modifica la propiedad name
     setPerson({ ...person, name: "Juan" });
   };
   const changeAge = () => {
@@ -28,7 +28,7 @@ const UseStateObject = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <h3>{person.name}</h3>
       <h3>{person.age}</h3>
       <h4>{person.message}</h4>
@@ -45,7 +45,7 @@ const UseStateObject = () => {
       <button className="btn" onClick={resetPerson}>
         reset
       </button>
-    </React.Fragment>
+    </>
   );
 };
 

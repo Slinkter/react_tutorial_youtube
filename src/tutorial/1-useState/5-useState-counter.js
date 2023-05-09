@@ -10,7 +10,7 @@ const UseStateCounter = () => {
   const reset = () => setValue(initialCount);
 
   return (
-    <React.Fragment>
+    <>
       <section style={{ margin: "4rem 0" }}>
         <h2>regular counter</h2>
         <h1>{value}</h1>
@@ -24,7 +24,7 @@ const UseStateCounter = () => {
           reset
         </button>
       </section>
-    </React.Fragment>
+    </>
   );
 };
 
