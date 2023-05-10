@@ -1,5 +1,5 @@
-import React from "react";
-import Setup from "./tutorial/3-conditional-rendering/05-short-circuit-examples";
+import React, { useState } from "react";
+import Setup from "./tutorial/3-conditional-rendering/07-user-challenge";
 function App() {
   return <div className="container">{<Setup />}</div>;
 }
