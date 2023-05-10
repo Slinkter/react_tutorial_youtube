@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 
 const url = "https://api.github.com/users/QuincyLarson";
 const initialDefault = null;
+const initialLoading = true;
+const initError = false;
 
 const MultipleReturns = () => {
   // HOOKS
   const [user, setUser] = useState(initialDefault);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(initialLoading);
+  const [isError, setIsError] = useState(initError);
   // FUNCTION AUX
   const getOneUser = async () => {
     try {
@@ -19,6 +21,8 @@ const MultipleReturns = () => {
         return;
       }
       const data = await res.json();
+      console.log(res);
+      console.log(data);
       setUser(data);
       setIsLoading(false);
       setIsError(false);
@@ -29,7 +33,9 @@ const MultipleReturns = () => {
   };
   //
   useEffect(() => {
-    getOneUser();
+    setTimeout(() => {
+      getOneUser();
+    }, 3000);
   }, []);
   //
   if (isLoading) {

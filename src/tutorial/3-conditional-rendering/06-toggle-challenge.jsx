@@ -7,7 +7,6 @@ const ToggleChange = () => {
     <div>
       <h1>abc</h1>
       <button className="btn" onClick={() => setShowAlert(!showAlert)}>
-        {" "}
         Tootlge Alert
       </button>
       {showAlert && <Alerta></Alerta>}

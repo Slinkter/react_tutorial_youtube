@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 // cleanup function
 // second argument
 const initialValue = window.innerWidth;
+const initialShow = false;
 
 const UseEffectCleanup = () => {
   //
   const [size, setSize] = useState(initialValue);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(initialShow);
   //
   const handleUpdateSize = () => setSize(window.innerWidth);
   const handleBtnShow = () => setShow(!show);

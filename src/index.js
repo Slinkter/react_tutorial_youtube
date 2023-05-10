@@ -1,8 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
+import ReactDOM from "react-dom/client";
+//
 import App from "./App";
+import "./index.css";
 // 12
-import main from "./tutorial/12-redux-toolkit/main";
+/* import main from "./tutorial/12-redux-toolkit/main"; */
 
-ReactDOM.render(main, document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
