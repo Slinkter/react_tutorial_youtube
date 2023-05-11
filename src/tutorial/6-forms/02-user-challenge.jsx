@@ -6,7 +6,16 @@ const UserChallenge = () => {
   const [name, setName] = useState("");
   const [users, setUsers] = useState(data);
   console.log(users);
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //-->
+    if (!name) return;
+    const fakeId = Date.now();
+    const newUser = { id: fakeId, name: name };
+    const updatedUsers = [...users, newUser];
+    setUsers(updatedUsers);
+    setName("");
+  };
   const removeUser = (id) => {
     const updatedUsers = users.filter((person) => person.id !== id);
     setUsers(updatedUsers);
