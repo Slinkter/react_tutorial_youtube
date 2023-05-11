@@ -1,7 +1,13 @@
-import React, { useState } from "react";
-import Setup from "./tutorial/3-conditional-rendering/07-user-challenge";
+import React from "react";
+import Setup from "./tutorial/6-forms/02-user-challenge";
 function App() {
-  return <div className="container">{<Setup />}</div>;
+  return (
+    <>
+      <div className="container">
+        <Setup />
+      </div>
+    </>
+  );
 }
 
 export default App;

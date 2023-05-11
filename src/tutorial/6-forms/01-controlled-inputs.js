@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 
 const ControlledInputs = () => {
+  // Hook
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [people, setPeople] = useState([]);
-
+  // Funcion
   const handleSubmit = (e) => {
+    //
     e.preventDefault();
+    //
     if (firstName && email) {
-      const person = {
+      const newPerson = {
         id: Date.now(),
         firstName,
         email,
       };
       //
-      setPeople([...people, person]);
-      //
+      setPeople([...people, newPerson]);
       setFirstName("");
       setEmail("");
     } else {
+      alert("empy values");
       console.log("empty values");
     }
   };
-  //
+  // render component
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
@@ -51,15 +54,12 @@ const ControlledInputs = () => {
         </button>
       </form>
 
-      {people.map((person) => {
-        const { id, firstName, email } = person;
-        return (
-          <div className="item" key={id}>
-            <h4>{firstName}</h4>
-            <p>{email}</p>
-          </div>
-        );
-      })}
+      {people.map(({ id, firstName, email }) => (
+        <div key={id} className="item">
+          <h4>{firstName}</h4>
+          <p>{email}</p>
+        </div>
+      ))}
     </>
   );
 };

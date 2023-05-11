@@ -6,7 +6,7 @@ https://youtu.be/2-crBg6wpp0
 
 ## Link Github
 
-https://github.com/john-smilga/react-course-v3
+https://github.com/john-smilga/react-course-v3/tree/main/03-advanced-react
 
 ## Run App
 
