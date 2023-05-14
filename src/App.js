@@ -1,5 +1,5 @@
 import React from "react";
-import Setup from "./tutorial/6-forms/02-user-challenge";
+import Setup from "./tutorial/6-forms/04-other-inputs";
 function App() {
   return (
     <>
