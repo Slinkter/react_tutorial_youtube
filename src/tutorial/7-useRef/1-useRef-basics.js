@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const initial = null;
 const initValue = 0;
+const initial = null;
 const initBoolean = false;
 
 const UseRefBasics = () => {
@@ -12,26 +12,28 @@ const UseRefBasics = () => {
   //
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(refContainer.current);
     const name = refContainer.current.value;
-    console.log(name);
-    console.log("refContainer.current.value : ", refContainer.current.value);
+    //
+    console.log("name :", name, "(refContainer.current.value)");
+    /* refContainer.current.value = ""; */
   };
   //
   useEffect(() => {
     refContainer.current.focus();
-    console.log("useEffect", refContainer.current);
+    console.log("useEffect 1 ", refContainer.current);
   });
   //
   useEffect(() => {
+    console.log("useEffect 2 ", refContainer.current);
     if (!isMounted.current) {
       isMounted.current = true;
       return;
     }
     console.log("re-render");
+    console.log("isMounted.current : ", isMounted.current);
     return () => {};
   }, [value]);
-
+  console.log("-------------------------------------");
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
