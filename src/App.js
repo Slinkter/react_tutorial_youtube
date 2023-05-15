@@ -1,5 +1,5 @@
 import React from "react";
-import Setup from "./tutorial/6-forms/04-other-inputs";
+import Setup from "./tutorial/7-useRef/1-useRef-basics";
 function App() {
   return (
     <>
