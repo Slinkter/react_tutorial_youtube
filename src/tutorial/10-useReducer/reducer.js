@@ -24,6 +24,7 @@ const reducer = (state, action) => {
         isModalOpen: true,
         modalContent: "item added",
       };
+
       return updateState;
     }
     //------------------------->

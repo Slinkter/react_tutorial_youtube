@@ -17,16 +17,16 @@ const ContextAPI = () => {
   // render
   return (
     <PersonContext.Provider value={values}>
-      <h3> CreateContext - useContext</h3>
+      <h3> CreateContext - Hook useContext</h3>
       <List />
     </PersonContext.Provider>
   );
 };
 
 const List = () => {
-  //
+  // get data from PersonContext
   const data = React.useContext(PersonContext);
-  //
+  // render component - list
   return (
     <>
       {data.people.map((person) => (
@@ -35,16 +35,19 @@ const List = () => {
     </>
   );
 };
-
+// Component
 const Person = ({ id, name }) => {
-  //
+  // get removePerson from PersonContext
   const { removePerson } = React.useContext(PersonContext);
+  // use removePerson
   const handleRemove = () => removePerson(id);
-  //
+  // render component
   return (
     <div className="item">
       <h4>{name}</h4>
-      <button onClick={handleRemove}>remove</button>
+      <button className="" onClick={handleRemove}>
+        remove
+      </button>
     </div>
   );
 };

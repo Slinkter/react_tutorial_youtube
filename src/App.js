@@ -1,5 +1,5 @@
 import React from "react";
-import Setup from "./tutorial/8-custom-hooks/03-fetch-example";
+import Setup from "./tutorial/12-redux-toolkit/main";
 function App() {
   return (
     <>

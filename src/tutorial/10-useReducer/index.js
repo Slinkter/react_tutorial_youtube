@@ -32,7 +32,9 @@ const Index = () => {
 
   return (
     <>
+      {/* -------------------------------------------- */}
       <form onSubmit={handleSubmit} className="form">
+        <label htmlFor=""> name:</label>
         <input
           type="text"
           value={name}
@@ -40,6 +42,7 @@ const Index = () => {
         />
         <button type="submit">add </button>
       </form>
+      {/* -------------------------------------------- */}
       {state.people.map((person) => {
         return (
           <div className="item" key={person.id}>
@@ -48,10 +51,11 @@ const Index = () => {
           </div>
         );
       })}
-
+      {/* -------------------------------------------- */}
       {state.isModalOpen && (
         <Modal modalContent={state.modalContent} closeModal={closeModal} />
       )}
+      {/* -------------------------------------------- */}
     </>
   );
 };
